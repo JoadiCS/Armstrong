@@ -1,102 +1,125 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="min-h-screen bg-background text-foreground">
+      <header className="border-b border-border bg-card/40 backdrop-blur">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-6 py-4">
+          <span className="text-lg font-semibold tracking-tight">Armstrong</span>
+          <nav className="flex items-center gap-6 text-sm text-muted-foreground">
+            <a className="transition-colors hover:text-foreground" href="#vision">
+              Vision
+            </a>
+            <a className="transition-colors hover:text-foreground" href="#product">
+              Product
+            </a>
+            <a className="transition-colors hover:text-foreground" href="#contact">
+              Contact
+            </a>
+          </nav>
         </div>
+      </header>
+
+      <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col gap-24 px-6 py-24">
+        <section className="flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
+          <div className="flex max-w-xl flex-col gap-6">
+            <span className="inline-flex w-fit items-center rounded-full border border-border bg-card px-3 py-1 text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">
+              Launching soon
+            </span>
+            <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">
+              Building mission-critical software for ambitious teams.
+            </h1>
+            <p className="text-base text-muted-foreground md:text-lg">
+              Armstrong is a product engineering studio focused on delivering durable, scalable web platforms.
+              This project scaffold is ready for the first sprint—no starter-kit clutter, just clean foundations.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a
+                className="rounded-full bg-foreground px-6 py-2 text-sm font-medium text-background shadow transition-transform hover:-translate-y-0.5"
+                href="#contact"
+              >
+                Start a project
+              </a>
+              <a
+                className="rounded-full border border-border px-6 py-2 text-sm font-medium transition-colors hover:bg-card"
+                href="#product"
+              >
+                Explore the roadmap
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-1 justify-center md:justify-end">
+            <div className="grid w-full max-w-sm gap-3 rounded-2xl border border-dashed border-border bg-card/30 p-6 text-sm text-muted-foreground">
+              <p className="font-semibold text-foreground">Project checklist</p>
+              <ul className="grid gap-2">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-emerald-500" aria-hidden />
+                  Define the MVP scope
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-amber-500" aria-hidden />
+                  Align the product roadmap
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1 inline-block h-2 w-2 rounded-full bg-sky-500" aria-hidden />
+                  Establish feedback loops
+                </li>
+              </ul>
+              <p className="text-xs italic">
+                Everything you need to start building lives here. Replace this checklist with real milestones as your product takes shape.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="vision" className="grid gap-6">
+          <h2 className="text-2xl font-semibold">Vision</h2>
+          <p className="text-muted-foreground">
+            Armstrong exists to turn complex ideas into resilient software. This baseline app ships with sensible defaults, modern tooling, and a clean component library so you can focus on shipping features instead of deleting boilerplate.
+          </p>
+        </section>
+
+        <section id="product" className="grid gap-6">
+          <h2 className="text-2xl font-semibold">Product Foundation</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-lg border border-border bg-card/50 p-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Tech stack</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Next.js 14, React Server Components, Tailwind CSS, and shadcn/ui primitives. Everything configured and production ready.
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-card/50 p-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Design system</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Utility-first styling with thoughtful defaults. Swap in your brand tokens and extend the component library as you grow.
+              </p>
+            </div>
+            <div className="rounded-lg border border-border bg-card/50 p-4">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">Developer experience</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                TypeScript-first setup, linting, and formatting built in. Ready for CI, preview deployments, and collaborative workflows.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="grid gap-4 rounded-2xl border border-border bg-card/40 p-6">
+          <h2 className="text-2xl font-semibold">Let&apos;s build together</h2>
+          <p className="text-muted-foreground">
+            Replace this call-to-action with your preferred contact form or onboarding flow. For now, it&apos;s a simple prompt to align the team and kick off execution.
+          </p>
+          <a
+            className="w-fit rounded-full bg-foreground px-6 py-2 text-sm font-medium text-background shadow transition-transform hover:-translate-y-0.5"
+            href="mailto:hello@armstrong.studio"
+          >
+            hello@armstrong.studio
+          </a>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      <footer className="border-t border-border bg-card/40">
+        <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-6 text-xs text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} Armstrong Studio. All rights reserved.</p>
+          <p>Made with intention, ready for iteration.</p>
+        </div>
       </footer>
     </div>
   );
